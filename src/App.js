@@ -6,7 +6,7 @@ function App()
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Bienvenido a SocialApp</h1>
+        <h1>Bienvenido a Evadan</h1>
         <div className="login-container">
           <input type="text" placeholder="Nombre de usuario" className="login-input" />
           <input type="password" placeholder="Contraseña" className="login-input" />

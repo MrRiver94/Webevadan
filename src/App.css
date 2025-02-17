@@ -1,38 +1,69 @@
+/* Establecemos el fondo gris para toda la página */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #07ddc4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para el contenedor principal (cuadrado azul) */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #007bff; /* Azul */
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Estilo para el header */
+.App-header {
+  text-align: center;
   color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilo para los inputs */
+.login-input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilo para el botón de iniciar sesión */
+.login-button {
+  width: 80%;
+  padding: 10px;
+  background-color: #ce173c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Cambiar color del botón cuando se pasa el ratón */
+.login-button:hover {
+  background-color: #003f7f;
+}
+
+/* Estilo para los enlaces de login */
+.login-links {
+  margin-top: 10px;
+}
+
+.login-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
 }
