@@ -1,22 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+function App() 
+{
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hola Eva.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Bienvenido a SocialApp</h1>
+        <div className="login-container">
+          <input type="text" placeholder="Nombre de usuario" className="login-input" />
+          <input type="password" placeholder="Contraseña" className="login-input" />
+          <button className="login-button">Iniciar sesión</button>
+          <div className="login-links">
+            <a href="#">Crear cuenta</a>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
       </header>
     </div>
   );
