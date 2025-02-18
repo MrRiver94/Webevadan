@@ -1,5 +1,10 @@
 function Perfil() {
-    return <h1>Página de Perfil</h1>;
-  }
-  
-  export default Perfil;
+  return (
+    <div className="perfil">
+      <h1>Mi Perfil</h1>
+      <p>¡Este es tu perfil! Aquí puedes ver tus publicaciones, amigos y mucho más.</p>
+    </div>
+  );
+}
+
+export default Perfil;
