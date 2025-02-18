@@ -1,23 +1,19 @@
+import { Routes, Route } from "react-router-dom";
+import Inicioapp from "./pages/Inicioapp";
+import Perfil from "./pages/Perfil";
+import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar";
 
-import './App.css';
-
-function App() 
-{
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Bienvenido a Evadan</h1>
-        <div className="login-container">
-          <input type="text" placeholder="Nombre de usuario" className="login-input" />
-          <input type="password" placeholder="Contraseña" className="login-input" />
-          <button className="login-button">Iniciar sesión</button>
-          <div className="login-links">
-            <a href="#">Crear cuenta</a>
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
-        </div>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Inicioapp />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
