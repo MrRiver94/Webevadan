@@ -1,0 +1,43 @@
+/* Contenedor del icono */
+.icon-container {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  
+  /* Estilo del logo */
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff6347, #00bfff, #32cd32, #ff69b4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-animation 3s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Animación de gradiente */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Efecto de agrandamiento al pasar el cursor */
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  

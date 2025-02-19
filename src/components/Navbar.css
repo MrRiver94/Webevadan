@@ -1,83 +1,38 @@
-/* App.css */
+/* Contenedor del navbar */
+.navbar-container {
+  position: fixed;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 410px;
+}
 
-/* Reset de márgenes y padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Fondo global */
-  body {
-    background-color: #f0f0f5;
-    color: #333;
-  }
-  
-  /* Navbar Estilo */
-  nav {
-    background-color: #333;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  nav .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  /* Estilo del logo */
-  nav .logo {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: linear-gradient(45deg, #ff6347, #00bfff, #32cd32, #ff69b4);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: gradient-animation 3s ease-in-out infinite;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
-  }
-  
-  /* Animación para el logo con el gradiente */
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  /* Estilos para los enlaces de la navbar */
-  nav ul {
-    list-style-type: none;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin: 0 20px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #ff6347;
-  }
-  
+/* Lista de íconos */
+.navbar-container ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly; /* Esto distribuye los elementos de manera uniforme */
+  padding: 0; /* Elimina cualquier padding extra */
+  margin: 0;  /* Elimina el margen extra */
+  width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
+}
+
+/* Estilos de los enlaces */
+.navbar-container ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease-in-out, color 0.3s ease;
+  padding: 5px;
+}
+
+/* Animación al pasar el cursor o hacer clic */
+.navbar-container ul li a:hover,
+.navbar-container ul li a:active {
+  transform: scale(1.2);
+  color: #ff6347;
+}
