@@ -33,7 +33,7 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await axios.post('https://flask-render-8y9z.onrender.com:1000/register', formData);
+      const response = await axios.post('https://flask-render-8y9z.onrender.com/register', formData);
 
       if (response.status === 201 || response.status === 200) {
         alert("Registro exitoso");
