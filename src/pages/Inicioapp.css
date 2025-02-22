@@ -1,69 +1,161 @@
-/* Establecemos el fondo gris para toda la página */
+/* Estilos generales */
 body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Color de fondo suave */
+  color: #333; /* Texto oscuro para buena legibilidad */
   margin: 0;
-  height: 100vh;
-  background-color: #07ddc4;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  position: relative; /* Asegura que el video se coloque detrás del contenido */
 }
 
-/* Estilo para el contenedor principal (cuadrado azul) */
-.App {
-  background-color: #007bff; /* Azul */
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  height: 400px;
+/* Estilo para el video */
+video {
+  position: absolute; /* Fija el video al fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+/* Encabezado */
+.App-header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px; /* Aumenta el tamaño máximo */
+ 
+}
+
+/* Título */
+h1 {
+  color: #fff; /* Blanco para que resalte sobre el fondo oscuro */
+  font-size: 30px; /* Aumenta el tamaño del título */
+  margin-bottom: 30px; /* Aumenta el espacio debajo del título */
+  text-align: center;
+}
+
+/* Contenedor de login */
+.login-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+   /* Fondo blanco semitransparente */
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-/* Estilo para el header */
-.App-header {
-  text-align: center;
-  color: white;
-  width: 100%;
-}
-
-/* Estilo para los inputs */
+/* Estilo de los inputs */
 .login-input {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
+  width: 90%;
+  max-width: 400px; /* Asegura que el input tenga un ancho máximo */
+  padding: 12px;
+  margin: 10px auto;
   border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 16px;
 }
 
-/* Estilo para el botón de iniciar sesión */
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Botón de iniciar sesión */
 .login-button {
-  width: 80%;
-  padding: 10px;
-  background-color: #ce173c;
+  width: 100%;
+  max-width: 400px;
+  padding: 14px;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto;
 }
 
-/* Cambiar color del botón cuando se pasa el ratón */
 .login-button:hover {
-  background-color: #003f7f;
+  background-color: #0056b3;
 }
 
-/* Estilo para los enlaces de login */
+.login-button:focus {
+  outline: none;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Links */
 .login-links {
+  margin-top: 20px;
+}
+
+.login-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-links li {
+  text-align: center;
   margin-top: 10px;
 }
 
 .login-links a {
-  color: white;
+  color: #007bff;
   text-decoration: none;
-  margin: 0 10px;
 }
 
 .login-links a:hover {
   text-decoration: underline;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .App-header {
+    width: 90%; /* Hace que el formulario ocupe el 90% del ancho en móviles */
+    padding: 30px; /* Ajusta el padding */
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .login-input, .login-button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    width: 95%; /* Hace que el formulario ocupe casi todo el ancho en dispositivos muy pequeños */
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .login-input, .login-button {
+    font-size: 16px;
+    padding: 10px;
+  }
 }

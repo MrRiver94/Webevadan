@@ -1,0 +1,31 @@
+.volver-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Asegúrate de que el botón esté por encima de otros elementos */
+    margin-bottom: 10px;
+  }
+  
+  .volver-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .volver-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .volver-button:focus {
+    outline: none;
+  }
+  

@@ -13,8 +13,6 @@ const RegisterForm = () => {
     country: "",
     city: "",
     phone: "",
-    profilePic: null,
-    bio: ""
   });
 
   const handleChange = (e) => {
@@ -22,9 +20,7 @@ const RegisterForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, profilePic: e.target.files[0] });
-  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,8 +50,6 @@ const RegisterForm = () => {
         <input type="text" name="country" placeholder="País" className="w-full p-2 border rounded" onChange={handleChange} required />
         <input type="text" name="city" placeholder="Ciudad" className="w-full p-2 border rounded" onChange={handleChange} required />
         <input type="tel" name="phone" placeholder="Teléfono" className="w-full p-2 border rounded" onChange={handleChange} required />
-        <input type="file" name="profilePic" className="w-full p-2 border rounded" onChange={handleFileChange} />
-        <textarea name="bio" placeholder="Biografía" className="w-full p-2 border rounded" onChange={handleChange}></textarea>
         <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Registrarse</button>
       </form>
     </div>

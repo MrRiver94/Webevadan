@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import './Inicioapp.css';
 import { Link } from "react-router-dom";
+import Hexagons from '../assets/video/Hexagons.mp4';
 
 function Inicioapp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null); // Estado para el mensaje de error
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate(); // Inicializa useNavigate 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,6 +40,9 @@ function Inicioapp() {
 
   return (
     <div className="App">
+      <div className='videologin'>
+          <video src={Hexagons} autoPlay loop muted/>
+      </div>
       <header className="App-header">
         <h1>Bienvenido a Evadan</h1>
         <div className="login-container">
@@ -61,11 +65,10 @@ function Inicioapp() {
           </form>
           {error && <p className="error-message">{error}</p>} {/* Muestra el mensaje de error si existe */}
           <div className="login-links">
-            <lu>
-            <li><Link to="/Formulario">Crear cuenta</Link></li>
-            <li>¿Olvidaste tu contraseña?</li>
-            </lu>
-            
+            <ul>
+              <li><Link to="/Formulario">Crear cuenta</Link></li>
+              <li>¿Olvidaste tu contraseña?</li>
+            </ul>
           </div>
         </div>
       </header>

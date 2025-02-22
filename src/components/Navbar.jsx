@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './Navbar.css';
 
 function Navbar() {
+
+  const location = useLocation();
+  const showLogo = location.pathname !== '/Formulario'; // Muestra el logo solo en la página principal
+
+  if (!showLogo) {
+    return null; // No renderiza el logo si no está en la página principal
+  }
   return (
     <nav>
       <div className="navbar-container">

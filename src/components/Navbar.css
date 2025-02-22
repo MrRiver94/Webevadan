@@ -9,16 +9,18 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 410px;
+  /* Asegura que el navbar se ajuste al tamaño de la pantalla */
+  max-width: 90%;
 }
 
 /* Lista de íconos */
 .navbar-container ul {
   list-style: none;
   display: flex;
-  justify-content: space-evenly; /* Esto distribuye los elementos de manera uniforme */
-  padding: 0; /* Elimina cualquier padding extra */
-  margin: 0;  /* Elimina el margen extra */
-  width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 /* Estilos de los enlaces */
@@ -35,4 +37,26 @@
 .navbar-container ul li a:active {
   transform: scale(1.2);
   color: #ff6347;
+}
+
+/* Media query para pantallas más pequeñas (móviles) */
+@media (max-width: 600px) {
+  /* Reducir el tamaño de la fuente en dispositivos móviles */
+  .navbar-container ul li a {
+    font-size: 1.2rem;
+  }
+  
+  /* Asegurar que el navbar ocupe todo el ancho disponible */
+  .navbar-container {
+    width: 90%;
+    bottom: 100px; /* Ajustar la distancia desde abajo */
+  }
+}
+
+/* Media query para pantallas más grandes (tabletas y escritorios) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Ajustar el tamaño de la fuente para tabletas */
+  .navbar-container ul li a {
+    font-size: 1.4rem;
+  }
 }
