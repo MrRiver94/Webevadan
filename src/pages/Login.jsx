@@ -1,40 +1,35 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
-import './Inicioapp.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './Login.css';
 import { Link } from "react-router-dom";
 import Hexagons from '../assets/video/Hexagons.mp4';
 
-function Inicioapp() {
+function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null); // Estado para el mensaje de error
-  const navigate = useNavigate(); // Inicializa useNavigate 
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError(null); // Limpia cualquier error anterior
+    setError(null);
 
     try {
-      const response = await fetch('https://flask-render-8y9z.onrender.com/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post('https://flask-render-8y9z.onrender.com:1000/login', { 
+        username, 
+        password 
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Token:', data.token);
-        // Guardar el token (considera HttpOnly cookies para mayor seguridad)
-        localStorage.setItem('token', data.token); // Ejemplo usando localStorage
-        navigate('/home'); // Redirige a /home
+      if (response.status === 200) {
+        const { token } = response.data;
+        localStorage.setItem('token', token);
+        navigate('/home'); // 🔥 Redirige a la nueva pantalla con el mensaje
       } else {
-        const errorData = await response.json(); // Intenta obtener el mensaje del backend
-        setError(errorData.message || 'Correo o contraseña incorrectos'); // Muestra el mensaje del backend o uno genérico
-        console.error('Error al iniciar sesión:', response.status, errorData);
+        setError('Correo o contraseña incorrectos');
       }
     } catch (error) {
-      setError('Error al iniciar sesión. Inténtalo de nuevo más tarde.'); // Mensaje de error genérico
-      console.error('Error al iniciar sesión:', error);
+      setError(error.response?.data?.message || 'No se pudo conectar con el servidor');
     }
   };
 
@@ -63,7 +58,7 @@ function Inicioapp() {
             />
             <button type="submit" className="login-button">Iniciar sesión</button>
           </form>
-          {error && <p className="error-message">{error}</p>} {/* Muestra el mensaje de error si existe */}
+          {error && <p className="error-message">{error}</p>}
           <div className="login-links">
             <ul>
               <li><Link to="/Formulario">Crear cuenta</Link></li>
@@ -76,4 +71,4 @@ function Inicioapp() {
   );
 }
 
-export default Inicioapp;
+export default Login;

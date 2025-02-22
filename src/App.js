@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Inicioapp from "./pages/Inicioapp";
+import Login from "./pages/Login";
 import Perfil from "./pages/Perfil";
 import Home from "./pages/Home";
 import PlusSquare from "./pages/PlusSquare";
@@ -17,7 +17,7 @@ function App() {
       <Icon />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Inicioapp />} />
+        <Route path="/" element={<Login />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/home" element={<Home />} />
         <Route path="/plussquare" element={<PlusSquare />} />
