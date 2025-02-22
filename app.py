@@ -65,7 +65,7 @@ def register():
 
 # Ruta para iniciar sesión
 
-"""
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.get_json()
@@ -79,32 +79,8 @@ def login():
     
     return jsonify({"message": "Credenciales incorrectas"}), 401
 
-"""
-@app.route("/users", methods=["GET"])
-def get_users():
-
-    print("HOLA1")
-    users = User.query.all()
-    """
-    user_list = [
-        {
-            "id": user.id,
-            "full_name": user.full_name,
-            "username": user.username,
-            "email": user.email,
-            "birth_date": str(user.birth_date),
-            "gender": user.gender,
-            "country": user.country,
-            "city": user.city,
-            "phone": user.phone,
-            "profile_pic": user.profile_pic,
-            "bio": user.bio
-        }
-        for user in users
-    ]
-    """
-    return jsonify("HOLA")
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render asigna un puerto dinámico
+    app.run(host="0.0.0.0", port=port, debug=True)
