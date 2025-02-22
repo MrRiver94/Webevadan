@@ -1,10 +1,11 @@
-function Home() {
-    return (
-      <div className="home">
-        <h1>Mi el Home</h1>
-        <p>¡Este es tu Home! Aquí puedes ver tus publicaciones, amigos y mucho más.</p>
-      </div>
-    );
-  }
-  
-  export default Home;
+import React from "react";
+
+const Home = () => {
+  return (
+    <div className="flex justify-center items-center h-screen bg-green-100">
+      <h1 className="text-3xl font-bold text-green-700">¡Hurra, estás dentro! 🎉</h1>
+    </div>
+  );
+};
+
+export default Home;
