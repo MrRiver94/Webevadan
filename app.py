@@ -65,6 +65,7 @@ def register():
 
 # Ruta para iniciar sesión
 
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.get_json()
