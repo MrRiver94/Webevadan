@@ -7,6 +7,9 @@ import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Icon from "./components/Icon";
+import Formulario from "./pages/Formulario";
+import Back from "./components/Back";
+
 
 function App() {
   return (
@@ -20,7 +23,9 @@ function App() {
         <Route path="/plussquare" element={<PlusSquare />} />
         <Route path="/search" element={<Search />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/Formulario" element={<Formulario />} />
       </Routes>
+      <Back /> {/* Botón fijado en todas las páginas */}
     </>
   );
 }

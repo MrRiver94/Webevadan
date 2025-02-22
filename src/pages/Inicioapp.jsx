@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import './Inicioapp.css';
+import { Link } from "react-router-dom";
 
 function Inicioapp() {
   const [username, setUsername] = useState('');
@@ -60,8 +61,11 @@ function Inicioapp() {
           </form>
           {error && <p className="error-message">{error}</p>} {/* Muestra el mensaje de error si existe */}
           <div className="login-links">
-            <a href="#">Crear cuenta</a>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <lu>
+            <li><Link to="/Formulario">Crear cuenta</Link></li>
+            <li>¿Olvidaste tu contraseña?</li>
+            </lu>
+            
           </div>
         </div>
       </header>
