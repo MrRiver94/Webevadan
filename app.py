@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import os
 from flask_migrate import Migrate
+from flask_cors import CORS, cross_origin
 
 # Configuración de Flask
 app = Flask(__name__)
@@ -39,6 +40,8 @@ migrate = Migrate(app, db)
 
 # Ruta para registrar usuarios
 @app.route("/register", methods=["POST"])
+@cross_origin()
+
 def register():
     data = request.get_json()
     if not data:
